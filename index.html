@@ -8,108 +8,106 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        background-color: #f7f7f7;
       }
       header {
         background-color: #333;
         color: #fff;
         padding: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+      header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://images.unsplash.com/photo-1606790748041-729bb9f9a22d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80") center center / cover;
+        filter: grayscale(50%);
+        z-index: -1;
       }
       h1 {
         font-size: 48px;
         margin: 0;
+        text-shadow: 2px 2px #333;
       }
       nav {
-        background-color: #ddd;
+        background-color: #fff;
         padding: 20px;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
       }
       nav ul {
         list-style: none;
         margin: 0;
         padding: 0;
+        display: flex;
+        justify-content: center;
       }
       nav li {
-        display: inline-block;
         margin-right: 20px;
       }
       nav li a {
         color: #333;
         text-decoration: none;
         font-weight: bold;
+        position: relative;
+      }
+      nav li a::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #333;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        transform-origin: bottom right;
+      }
+      nav li a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #333;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        transform-origin: bottom left;
+      }
+      nav li a:hover::before,
+      nav li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
       }
       main {
-        padding: 20px;
+        padding: 100px 20px 20px 20px;
       }
       section {
         margin-bottom: 20px;
+        position: relative;
+      }
+      section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        opacity: 0.8;
+        z-index: -1;
       }
       h2 {
-        font-size: 36px;
-        margin-bottom: 20px;
-      }
-      ul.skills {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-      }
-      ul.skills li {
-        margin-right: 10px;
-        margin-bottom: 10px;
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        border-radius: 5px;
-      }
-      .contact {
-        background-color: #ddd;
-        padding: 20px;
-        text-align: center;
-      }
-      .contact p {
-        margin: 0;
-      }
-      .contact a {
-        color: #333;
-        text-decoration: none;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Jacob Neel</h1>
-      <p>Computer Science Student at UAH</p>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <main>
-      <section id="about">
-        <h2>About Me</h2>
-        <p>Hi there! My name is Jacob Neel and I am a computer science student at UAH. I have a passion for programming and love working on challenging projects. In my free time, I enjoy playing video games and working on personal projects.</p>
-      </section>
-      <section id="education">
-        <h2>Education</h2>
-        <p>Bachelor of Science in Computer Science - University of Alabama in Huntsville (Expected Graduation Date: May 2025)</p>
-      </section>
-      <section id="skills">
-        <h2>Skills</h2>
-        <ul class="skills">
-          <li>Java</li>
-          <li>C++</li>
-          <li>Python</li>
-          <li>HTML/CSS/JavaScript</li>
-          <li>SQL</li>
-          <li>Linux</li>
-        </ul>
-      </section>
-      <section id="projects">
-        <h2>Projects</h2>
-        <h3
+        font-size:
